@@ -1,0 +1,54 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pkl
+*.egg-info/
+*.egg
+*.log
+
+# --- Virtual Environment ---
+venv/
+.envrc
+.python-version
+
+# --- Environment files ---
+.env
+.env.*
+!env.example   # サンプルは残す
+
+# --- IDE / Editor ---
+.vscode/
+.idea/
+*.iml
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- DB Migration (必要に応じて) ---
+alembic/versions/*.pyc
+alembic/versions/__pycache__/
+
+# --- Test / Coverage ---
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.tox/
+.mypy_cache/
+.cache/          # pytest や tox などのキャッシュ
+.pytype/
+.pyre/
+
+# --- Build / Dist ---
+build/
+dist/
+*.egg-info/
+.eggs/
+MANIFEST
+
+# --- Profiling ---
+.prof
+.profraw
