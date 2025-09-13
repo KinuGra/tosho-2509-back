@@ -14,6 +14,7 @@ class User(Base):
     created_at: Mapped[DateTime] = mapped_column(DateTime(timezone=True), server_default=func.now())
 
     progresses: Mapped[list["UserStepProgress"]] = relationship(back_populates="user", cascade="all, delete-orphan")
+    progress: Mapped[str] = mapped_column(String(255), default="0000", nullable=False)
 
 class VerificationCode(Base):
     """
