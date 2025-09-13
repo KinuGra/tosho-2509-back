@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
-from app.routers import auth, twofa, progress, ranking
+from app.routers import auth, twofa, progress, ranking, gitsim
 import logging
 import sys
 
@@ -39,6 +39,7 @@ app.include_router(auth.router)
 app.include_router(twofa.router)
 app.include_router(progress.router)
 app.include_router(ranking.router)
+app.include_router(gitsim.router)
 
 @app.get("/health")
 def health():
