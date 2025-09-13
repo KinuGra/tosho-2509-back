@@ -1,5 +1,6 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from pydantic import Field
+from typing import Optional
 
 class Settings(BaseSettings):
     APP_NAME: str = "GitSimAPI"
@@ -16,7 +17,7 @@ class Settings(BaseSettings):
 
     MAIL_SENDER: str
     MAIL_BACKEND: str = "dummy"  # or "smtp"
-    SMTP_HOST: str | None = None
+    SMTP_HOST: Optional[str] = None
     SMTP_PORT: int | None = None
     SMTP_USER: str | None = None
     SMTP_PASSWORD: str | None = None
