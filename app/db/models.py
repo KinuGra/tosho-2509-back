@@ -1,3 +1,4 @@
+from typing import Optional
 from sqlalchemy import String, Integer, Boolean, DateTime, ForeignKey, UniqueConstraint, func
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from app.db.base import Base
@@ -51,6 +52,6 @@ class UserStepProgress(Base):
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), index=True)
     step_id: Mapped[int] = mapped_column(ForeignKey("steps.id", ondelete="CASCADE"), index=True)
     is_cleared: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
-    cleared_at: Mapped[DateTime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    cleared_at: Mapped[Optional[DateTime]] = mapped_column(DateTime(timezone=True), nullable=True)
 
     user: Mapped["User"] = relationship(back_populates="progresses")
